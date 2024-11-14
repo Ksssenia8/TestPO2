@@ -1,33 +1,28 @@
-# src/main.py
-#Проверкаапро
-from task import Task
-from task_manager import TaskManager
+from library import Library
+from book import Book
+
 
 def main():
-    manager = TaskManager()
+    # Создание библиотеки
+    library = Library()
 
-    # Пример добавления задач
-    task1 = Task("Купить продукты", "Купить молоко и хлеб.")
-    task2 = Task("Позвонить другу", "Позвонить и обсудить планы.")
+    # Добавление книг
+    book1 = Book("Python Programming", "John Doe", 2020)
+    book2 = Book("Advanced Python", "John Doe", 2021)
+    book3 = Book("Old Python", "Jane Smith", 1990)
 
-    manager.add_task(task1)
-    manager.add_task(task2)
+    library.add_book(book1)
+    library.add_book(book2)
+    library.add_book(book3)
 
-    # Вывод списка задач
-    print("Список задач:")
-    manager.display_tasks()
+    # Поиск книг по автору
+    books_by_author = library.search_by_author("John Doe")
+    print(f"Books by John Doe: {books_by_author}")
 
-    # Завершение задачи
-    task1.mark_completed()
+    # Поиск книг старше 2000 года
+    old_books = library.search_older_than(2000)
+    print(f"Books older than 2000: {old_books}")
 
-    # Обновление описания
-    task2.update_description("Позвонить другу и обсудить путешествие.")
-
-    # Удаление задачи
-    manager.remove_task("Купить продукты")
-
-    print("\nОбновлённый список задач:")
-    manager.display_tasks()
 
 if __name__ == "__main__":
     main()
