@@ -1,6 +1,6 @@
 from library import Library
 from book import Book
-
+#проверка при пуше
 
 def main():
     # Создание библиотеки
