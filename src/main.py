@@ -1,5 +1,5 @@
 # src/main.py
-#Проверка
+#Проверкаапро
 from task import Task
 from task_manager import TaskManager
 
