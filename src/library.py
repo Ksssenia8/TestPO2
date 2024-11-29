@@ -13,13 +13,6 @@ class Library:
         else:
             self.author_books_count[book.author] = 1
 
-    def find_book_by_title(self, title):
-        """Поиск книги по названию"""
-        for book in self.books:
-            if book.title == title:
-                return book
-        return None  # Если книга не найдена, возвращаем None
-
     def remove_book(self, book):
         """Удаление книги из библиотеки"""
         if book in self.books:
